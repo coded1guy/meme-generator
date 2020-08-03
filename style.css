@@ -222,19 +222,6 @@ html, body {
     }
 }
 @media (max-width: 768px) {
-    .col {
-        color: #F7B32B;
-        margin-right: 3px;
-    }
-    nav::before {
-        content: " ";
-        width: 46px;
-        height: 46px;
-        position: absolute;
-        background: #FFFFFF;
-        border-radius: 50%;
-        left: 10px;
-    }
     nav { 
         position: relative;
         width: 100%; 
@@ -253,6 +240,15 @@ html, body {
         color: #64241d;
         font-size: 12px;
     }
+    nav::before {
+        content: " ";
+        width: 46px;
+        height: 46px;
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 50%;
+        left: 10px;
+    }
     .logo {
         position: absolute;
         font-family: 'Changa', sans-serif;
@@ -260,6 +256,10 @@ html, body {
         left: 23px;
         align-self: center;
         color: white;
+    }
+    .col {
+        color: #F7B32B;
+        margin-right: 3px;
     }
     main {
         display: flex;
