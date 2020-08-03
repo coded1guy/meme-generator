@@ -21,8 +21,18 @@ let txtInputCinq, txtSizeInputCinq, xAxisCinq, yAxisCinq, txtColorCinq, txtBorde
 
 
 // GENERATE IMAGE FUNCTION
-function generateMeme(img,
-    // TEXT 1
+function generateMeme(img) {
+    let fontSize, x, y, lines;
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0);
+
+    // DRAW TEXT FUMCTION
+    function drawText(
+        // TEXT 1
     txtUn, txtSizeUn, x_AxisUn, y_AxisUn, txtColorUn, txtBColorUn, lineHeightUn,
     // text 2
     txtDuex, txtSizeDuex, x_AxisDuex, y_AxisDuex, txtColorDuex, txtBColorDuex, lineHeightDuex,
@@ -33,16 +43,6 @@ function generateMeme(img,
     // TEXT 5
     txtCinq, txtSizeCinq, x_AxisCinq, y_AxisCinq, txtColorCinq, txtBColorCinq, lineHeightCinq
     ) {
-    let fontSize, x, y, lines;
-
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0);
-
-    // DRAW TEXT FUMCTION
-    function drawText() {
         let position = 'center';
 
         // TEXT 1
@@ -155,7 +155,23 @@ function generateMeme(img,
             ctx.strokeText(lines[i], x, y + (i * lineHeightCinq) );
         }
     }
-    drawText();
+    drawText(
+        // TEXT 1
+        txtInputUn.value, txtSizeInputUn.value, xAxisUn.value, yAxisUn.value, 
+        txtColorUn.value, txtBorderColorUn.value, lineHeightUn.value, 
+        // TEXT 2
+        txtInputDuex.value, txtSizeInputDuex.value, xAxisDuex.value, yAxisDuex.value, 
+        txtColorDuex.value, txtBorderColorDuex.value, lineHeightDuex.value,
+        // TEXT 3
+        txtInputTrois.value, txtSizeInputTrois.value, xAxisTrois.value, yAxisTrois.value, 
+        txtColorTrois.value, txtBorderColorTrois.value, lineHeightTrois.value, 
+        // TEXT 4
+        txtInputQuatre.value, txtSizeInputQuatre.value, xAxisQuatre.value, yAxisQuatre.value, 
+        txtColorQuatre.value, txtBorderColorQuatre.value, lineHeightQuatre.value,
+        // TEXT 5
+        txtInputCinq.value, txtSizeInputCinq.value, xAxisCinq.value, yAxisCinq.value, 
+        txtColorCinq.value, txtBorderColorCinq.value, lineHeightCinq.value
+    );
 }
 
 // VARIABLE INITIALIZATION
@@ -235,23 +251,7 @@ function init () {
         reader.onload = function () {
             let img = new Image;
             img.src = reader.result;
-            generateMeme(img, 
-                // TEXT 1
-                txtInputUn.value, txtSizeInputUn.value, xAxisUn.value, yAxisUn.value, 
-                txtColorUn.value, txtBorderColorUn.value, lineHeightUn.value, 
-                // TEXT 2
-                txtInputDuex.value, txtSizeInputDuex.value, xAxisDuex.value, yAxisDuex.value, 
-                txtColorDuex.value, txtBorderColorDuex.value, lineHeightDuex.value,
-                // TEXT 3
-                txtInputTrois.value, txtSizeInputTrois.value, xAxisTrois.value, yAxisTrois.value, 
-                txtColorTrois.value, txtBorderColorTrois.value, lineHeightTrois.value, 
-                // TEXT 4
-                txtInputQuatre.value, txtSizeInputQuatre.value, xAxisQuatre.value, yAxisQuatre.value, 
-                txtColorQuatre.value, txtBorderColorQuatre.value, lineHeightQuatre.value,
-                // TEXT 5
-                txtInputCinq.value, txtSizeInputCinq.value, xAxisCinq.value, yAxisCinq.value, 
-                txtColorCinq.value, txtBorderColorCinq.value, lineHeightCinq.value
-            );
+            generateMeme(img);
         };
         reader.readAsDataURL(imageInput.files[0]);
     });
