@@ -256,7 +256,6 @@ html, body {
         left: 23px;
         align-self: center;
         color: white;
-        transform: translateY(50%);
     }
     .col {
         color: #F7B32B;
