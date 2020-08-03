@@ -30,7 +30,7 @@ html, body {
 * {
     box-sizing: border-box;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .col {
         color: #F7B32B;
         margin-right: 3px;
@@ -220,7 +220,7 @@ html, body {
         font-size: 16px;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .col {
         color: #F7B32B;
         margin-right: 3px;
@@ -316,7 +316,6 @@ html, body {
     }
     .text-setting-container .text-settings {
         width: auto;
-        border: 1px solid red;
         padding: 9px;
         
         display: flex;
