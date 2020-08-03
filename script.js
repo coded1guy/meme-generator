@@ -255,23 +255,6 @@ function init () {
         };
         reader.readAsDataURL(imageInput.files[0]);
     });
-    addButton.addEventListener('click', function () {
-        console.log('im working');
-        if (txt2.style.display == 'none') {
-            txt2.style.display = 'block';
-        }
-        else if (txt2.style.display == 'block' && txt3.style.display == 'none') {
-            txt3.style.display = 'block';
-        } else if (txt2.style.display == 'block' && txt3.style.display == 'block' 
-        && txt4.style.display == 'none') {
-            txt4.style.display = 'block';
-        } else {
-            txt5.style.display = 'block';
-            if (txt5.style.display == 'block') {
-                addButton.style.display = 'none';
-            }
-        }
-    });
 
     // HIDE AND SHOW TEXT PROPERTIES
     let setting1 = document.querySelector('#set1');
@@ -285,58 +268,158 @@ function init () {
     setting3.style.display = 'none';
     setting4.style.display = 'none';
     setting5.style.display = 'none';
-
-    dropBtnUn.addEventListener('click', function () {
-        if (setting1.style.display == 'none') {
-            setting1.style.display = 'block';
-        } else {
-            setting1.style.display = 'none';
-        }
-    });
-    dropBtnDuex.addEventListener('click', function () {
-        if (setting2.style.display == 'none') {
-            setting2.style.display = 'block';
-        } else {
-            setting2.style.display = 'none';
-        }
-    });
-    dropBtnTrois.addEventListener('click', function () {
-        if (setting3.style.display == 'none') {
-            setting3.style.display = 'block';
-        } else {
-            setting3.style.display = 'none';
-        }
-    });
-    dropBtnQuatre.addEventListener('click', function () {
-        if (setting4.style.display == 'none') {
-            setting4.style.display = 'block';
-        } else {
-            setting4.style.display = 'none';
-        }
-    });
-    dropBtnCinq.addEventListener('click', function () {
-        if (setting5.style.display == 'none') {
-            setting5.style.display = 'block';
-        } else {
-            setting5.style.display = 'none';
-        }
-    });
-    // CALLING THE IMAGE UPLOAD
     
-//var imageUrl;
-document.querySelector("#imageUpload").addEventListener('click', function() {
-    document.querySelector("#image-input").click();
-});
+    // MY MEDIA QUERY
+    function myFunction() {
+        if (x.matches) { // If media query matches
+            console.log('small');
+            addButton.addEventListener('click', function () {
+                console.log('im working');
+                if (txt2.style.display == 'none') {
+                    txt2.style.display = 'flex';
+                }
+                else if (txt2.style.display == 'flex' && txt3.style.display == 'none') {
+                    txt3.style.display = 'flex';
+                } else if (txt2.style.display == 'flex' && txt3.style.display == 'flex' 
+                && txt4.style.display == 'none') {
+                    txt4.style.display = 'flex';
+                } else {
+                    txt5.style.display = 'flex';
+                    if (txt5.style.display == 'flex') {
+                        addButton.style.display = 'none';
+                    }
+                }
+            });
 
-// IMAGE UPLOAD SEQUENCE
-document.querySelector("#image-input").addEventListener('change', function() {
-    var file = this.files[0];
-    // SET THE FILE NAME
-    document.querySelector("#imageName").innerText = file.name;
-    document.querySelector("#imageName").style.display = 'block';
-    // GET THE LOCAL URL
-    //imageUrl = URL.createObjectURL(file);
-});
+            dropBtnUn.addEventListener('click', function () {
+                if (setting1.style.display == 'none') {
+                    setting1.style.display = 'flex';
+                } else {
+                    setting1.style.display = 'none';
+                }
+            });
+            dropBtnDuex.addEventListener('click', function () {
+                if (setting2.style.display == 'none') {
+                    setting2.style.display = 'flex';
+                } else {
+                    setting2.style.display = 'none';
+                }
+            });
+            dropBtnTrois.addEventListener('click', function () {
+                if (setting3.style.display == 'none') {
+                    setting3.style.display = 'flex';
+                } else {
+                    setting3.style.display = 'none';
+                }
+            });
+            dropBtnQuatre.addEventListener('click', function () {
+                if (setting4.style.display == 'none') {
+                    setting4.style.display = 'flex';
+                } else {
+                    setting4.style.display = 'none';
+                }
+            });
+            dropBtnCinq.addEventListener('click', function () {
+                if (setting5.style.display == 'none') {
+                    setting5.style.display = 'flex';
+                } else {
+                    setting5.style.display = 'none';
+                }
+            });
+        } else {
+            console.log('big');
+            addButton.addEventListener('click', function () {
+                console.log('im working');
+                if (txt2.style.display == 'none') {
+                    txt2.style.display = 'block';
+                }
+                else if (txt2.style.display == 'block' && txt3.style.display == 'none') {
+                    txt3.style.display = 'block';
+                } else if (txt2.style.display == 'block' && txt3.style.display == 'block' 
+                && txt4.style.display == 'none') {
+                    txt4.style.display = 'block';
+                } else {
+                    txt5.style.display = 'block';
+                    if (txt5.style.display == 'block') {
+                        addButton.style.display = 'none';
+                    }
+                }
+            });
+
+            dropBtnUn.addEventListener('click', function () {
+                if (setting1.style.display == 'none') {
+                    setting1.style.display = 'block';
+                } else {
+                    setting1.style.display = 'none';
+                }
+            });
+            dropBtnDuex.addEventListener('click', function () {
+                if (setting2.style.display == 'none') {
+                    setting2.style.display = 'block';
+                } else {
+                    setting2.style.display = 'none';
+                }
+            });
+            dropBtnTrois.addEventListener('click', function () {
+                if (setting3.style.display == 'none') {
+                    setting3.style.display = 'block';
+                } else {
+                    setting3.style.display = 'none';
+                }
+            });
+            dropBtnQuatre.addEventListener('click', function () {
+                if (setting4.style.display == 'none') {
+                    setting4.style.display = 'block';
+                } else {
+                    setting4.style.display = 'none';
+                }
+            });
+            dropBtnCinq.addEventListener('click', function () {
+                if (setting5.style.display == 'none') {
+                    setting5.style.display = 'block';
+                } else {
+                    setting5.style.display = 'none';
+                }
+            });
+        }
+
+        const canvasImage = document.getElementById('canvas-image');
+        const download = document.querySelector('#download-btn');
+        download.addEventListener('click', function () {
+            const dataURL = canvas.toDataURL('image/jpeg');
+            canvasImage.src = dataURL;
+            if (window.navigator.msSaveBlob) {
+                window.navigator.msSaveBlob(canvas.msToBlob(), 'meme.png');
+            } else {
+                const a = document.createElement('a');
+                document.body.appendChild(a);
+                a.href = canvas.toDataURL('image/jpeg');
+                a.download = 'canvas-image.jpg';
+                a.click();
+                
+            }
+        })
+    }
+    
+    var x = window.matchMedia("(max-width: 700px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+    // CALLING THE IMAGE UPLOAD
+
+    //var imageUrl;
+    document.querySelector("#imageUpload").addEventListener('click', function() {
+        document.querySelector("#image-input").click();
+    });
+
+    // IMAGE UPLOAD SEQUENCE
+    document.querySelector("#image-input").addEventListener('change', function() {
+        var file = this.files[0];
+        // SET THE FILE NAME
+        document.querySelector("#imageName").innerText = file.name;
+        document.querySelector("#imageName").style.display = 'block';
+        // GET THE LOCAL URL
+        //imageUrl = URL.createObjectURL(file);
+    });
 }
 
 init();

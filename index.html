@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emmo's Meme Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="Assets/favicon/favicon.ico"/>
+    <link rel="icon" type="image/apple-touch-icon" href="Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" href="Assets/favicon/favicon-16x16.png"/>
+    <link rel="icon" href="Assets/favicon/favicon-32x32.png"/>
 </head>
 <body>
     <nav>
@@ -27,13 +33,15 @@
         <div class="content">
             <p>
                 <button class="generate-btn" id="generate-btn">Generate</button>
-                <br>
-                <button class="download-btn" id="download-btn">Download meme</button>
             </p>
             <p>
                 <center>
                     <canvas id="meme-canvas"></canvas>
                 </center>
+            </p>
+            <p>
+                <img src="" id="canvas-image" style= "display: none;">
+                <button class="download-btn" id="download-btn">Download meme</button>
             </p>
         </div>
         <aside class="text-tool">
@@ -43,9 +51,10 @@
                     <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB1">
                 </h3>
                 <div class="text-settings" id="set1">
-                    <div>
-                        <textarea id="text-one"></textarea>
+                    <textarea id="text-one"></textarea>
                         <hr class="hr">
+                    <div>
+                        <header>Text</header>
                         <div>
                             <span>text size:</span>
                             <input type="range" id="text-one-size-input" min="0.05" 
@@ -87,9 +96,10 @@
                     <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB2">
                 </h3>
                 <div class="text-settings" id="set2">
+                    <textarea id="text-two"></textarea>
+                    <hr class="hr">
                     <div>
-                        <textarea id="text-two"></textarea>
-                        <hr class="hr">
+                        <header>Text</header>                       
                         <div>
                             <span>text size:</span>
                             <input type="range" id="text-two-size-input" min="0.05" 
@@ -131,9 +141,10 @@
                     <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB3">
                 </h3>
                 <div class="text-settings" id="set3">
+                    <textarea id="text-three"></textarea>
+                    <hr class="hr">
                     <div>
-                        <textarea id="text-three"></textarea>
-                        <hr class="hr">
+                        <header>Text</header> 
                         <div>
                             <span>text size:</span>
                             <input type="range" id="text-three-size-input" min="0.05" 
@@ -175,9 +186,10 @@
                     <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB4">
                 </h3>
                 <div class="text-settings"  id="set4">
+                    <textarea id="text-four"></textarea>
+                    <hr class="hr">
                     <div>
-                        <textarea id="text-four"></textarea>
-                        <hr class="hr">
+                        <header>Text</header> 
                         <div>
                             <span>text size:</span>
                             <input type="range" id="text-four-size-input" min="0.05" 
@@ -219,9 +231,10 @@
                     <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB5">
                 </h3>
                 <div class="text-settings" id="set5">
+                    <textarea id="text-five"></textarea>
+                    <hr class="hr">
                     <div>
-                        <textarea id="text-five"></textarea>
-                        <hr class="hr">
+                        <header>Text</header> 
                         <div>
                             <span>text size:</span>
                             <input type="range" id="text-five-size-input" min="0.05" 
@@ -261,7 +274,7 @@
         </aside>
     </main>
     <footer>
-        <h4>&copy; OLUBIYI EMMANUEL 2020, #ECX INTERNSHIP #MEME GENERATOR</h4>
+        <h4><span class="end">&copy; OLUBIYI EMMANUEL 2020,</span> <span>#ECX INTERNSHIP</span> <span>#MEME GENERATOR</span></h4>
     </footer>
     <script src="script.js"></script>
 </body>
