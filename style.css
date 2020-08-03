@@ -198,13 +198,13 @@ html, body {
         font-size: 1.4vw;
     }
     .imgCnt .imageDialogContainer .imageUpload {
-        width: inherit;
-        height: auto;
-        background-color: white;
-        color: #336699;
-        background: none;
-        font-size: inherit;
-        font-family: inherit;
+        padding: 20px;
+        background: white;
+        text-align: center;
+        align-self: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: rgb(39, 6, 6);
+        font-size: 20px;
         outline: none;
         display: block;
         cursor: pointer;
@@ -385,15 +385,16 @@ html, body {
         color: #1C5D99;
         font-family: 'Quicksand semibold', sans-serif;
         font-size: 15px;
-     }
-     button:hover {
+    }
+    button:hover {
          border: none;
          outline: none;
-     }
-     .add-text {
+    }
+    .add-text {
         margin-left: 15px;
-     }
-     .download-btn {
+        height: auto;
+    }
+    .download-btn {
         margin-top: 10px;
         height: 50px;
     }
@@ -416,8 +417,13 @@ html, body {
         margin: 2% 1.5%;
     }
     .imgCnt .imageDialogContainer .imageUpload {
-        background-color: white;
-        background: none;
+        padding: 20px;
+        background: white;
+        text-align: center;
+        align-self: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: rgb(39, 6, 6);
+        font-size: 20px;
         outline: none;
         display: block;
         cursor: pointer;
