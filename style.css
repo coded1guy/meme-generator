@@ -66,6 +66,7 @@ html, body {
         position: absolute;
         font-family: 'Changa', sans-serif;
         font-size: 28px;
+        align-self: center;
         left: 30px;
         color: white;
     }
