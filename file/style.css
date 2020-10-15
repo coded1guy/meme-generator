@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap');
+@font-face {
+    font-family: Quicksand light;
+    src: url(fonts/static/Quicksand-Light.ttf);
+}
+@font-face {
+    font-family: Quicksand regular;
+    src: url(fonts/static/Quicksand-Regular.ttf);
+}
+@font-face {
+    font-family: Quicksand medium;
+    src: url(fonts/static/Quicksand-Medium.ttf);
+}
+@font-face {
+    font-family: Quicksand semibold;
+    src: url(fonts/static/Quicksand-SemiBold.ttf);
+}
+@font-face {
+    font-family: Quicksand bold;
+    src: url(fonts/static/Quicksand-Bold.ttf);
+}
+
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+@media (min-width: 769px) {
+    .col {
+        color: #F7B32B;
+        margin-right: 3px;
+    }
+    nav::before {
+        content: " ";
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 50%;
+        left: 20px;
+    }
+    nav { 
+        position: relative;
+        width: 100%; 
+        height: 10vh;
+        margin: 0;
+        padding: 0 20px;
+        z-index: 100;
+        background: #F7B32B;
+        -webkit-box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        -moz-box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: #64241d;
+        font-size: 20px;
+    }
+    .logo {
+        position: absolute;
+        font-family: 'Changa', sans-serif;
+        font-size: 28px;
+        align-self: center;
+        left: 30px;
+        color: white;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .image-tool { 
+        width: 20%; 
+        height: 80vh;
+        margin: 0; 
+        float: left; 
+        background: #A9E5BB;
+        overflow-y: scroll;
+    }
+    .content { 
+        width: 60%; 
+        height: 80vh;
+        margin: 0; 
+        background: #FCF6B1;
+        overflow-y: scroll;
+    }
+    .text-tool {
+        width: 20%; 
+        height: 80vh;
+        margin: 0; 
+        float: right; 
+        background: #A9E5BB;
+        overflow-y: scroll;
+    }
+    .text-setting-container {
+        background: #a2d44c;
+        color: #143a06;
+        font-family: 'Quicksand semibold', sans-serif;
+        padding: 2px 17px;
+        border-bottom: 2px solid #F5F5F5;
+    }
+    .text-setting-container h3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .text-setting-container .text-settings {
+        padding: 9px 0 15px 0;
+    }
+    .text-setting-container .text-settings textarea {
+        width: 100%;
+        height: 70px;
+        resize: none;
+        outline: none;
+    }
+    .hr {
+        width: 100%;
+        border: 1px solid #F5F5F5;
+        margin: 9px 0;
+    }
+    .text-setting-container .text-settings textarea:hover {
+        outline: none;
+    }
+    footer { 
+        width: 100%; 
+        height: 10vh;
+        margin: 0; 
+        background: #2D1E2F;
+        color: #FFFFFF;
+        font-family: 'Quicksand semibold', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #meme-canvas {
+        width: 400px;
+        background-color: gray;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .text-setting-container {
+        display: none;
+    }
+     .first {
+        display: block;
+     }
+    
+    button {
+        background: white;
+        border: none;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #1C5D99;
+        font-family: 'Quicksand semibold', sans-serif;
+        font-size: 17px;
+     }
+     button:hover {
+         border: none;
+         outline: none;
+     }
+     .add-text {
+         margin-top: 15px;
+     }
+     .download-btn {
+        margin-top: 20px;
+        height: 50px;
+    }
+    .imgCnt {
+        margin: 0 4% 0 4%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .imgCnt .imageDialogContainer {
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin: 2% 1.5%;
+        font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4vw;
+    }
+    .imgCnt .imageDialogContainer .imageUpload {
+        padding: 20px;
+        background: white;
+        text-align: center;
+        align-self: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: rgb(39, 6, 6);
+        font-size: 20px;
+        outline: none;
+        display: block;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .imgCnt .imageDialogContainer .imageFile {
+        display: none;
+    }
+    .imgCnt .imageDialogContainer .imageName {
+        display: none;
+        color: #1071F3;
+        margin: 2% 0;
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px) {
+    nav { 
+        position: relative;
+        width: 100%; 
+        height: 10vh;
+        margin: 0;
+        padding: 0 10px;
+        z-index: 100;
+        background: #F7B32B;
+        -webkit-box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        -moz-box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        box-shadow: -1px 2px 20px -10px rgba(0, 0, 0, 0.562);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: #64241d;
+        font-size: 12px;
+    }
+    nav::before {
+        content: " ";
+        width: 46px;
+        height: 46px;
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 50%;
+        left: 10px;
+    }
+    .logo {
+        position: absolute;
+        font-family: 'Changa', sans-serif;
+        font-size: 22px;
+        left: 23px;
+        align-self: center;
+        color: white;
+    }
+    .col {
+        color: #F7B32B;
+        margin-right: 3px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    .image-tool { 
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        float: left; 
+        background: #A9E5BB;
+        overflow-y: scroll;
+    }
+    .content { 
+        width: 100%; 
+        height: 60vh;
+        margin: 0; 
+        background: #FCF6B1;
+        overflow-x: scroll;
+    }
+    .text-tool {
+        min-width: 100%;
+        height: 20vh;
+        margin: 0; 
+        display: flex;
+        flex-direction: row;
+        background: #A9E5BB;
+        align-items: center;
+        overflow: auto;
+    }
+    .text-setting-container {
+        width: auto;
+        background: #a2d44c;
+        color: #143a06;
+        font-family: 'Quicksand semibold', sans-serif;
+        padding: 2px 17px;
+        border-right: 2px solid #F5F5F5;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .text-setting-container h3 {
+        width: 100px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 80px;
+    }
+    .text-setting-container .text-settings {
+        width: auto;
+        padding: 9px;
+        
+        display: flex;
+        flex-direction: row;
+        
+        align-items: center;
+
+    }
+    .text-setting-container .text-settings textarea {
+        width: 140px;
+        height: 50px;
+        resize: none;
+        outline: none;
+    }
+    .hr {
+        width: 16vh;
+        border: 1px solid #F5F5F5;
+        margin: 0 9px;
+        transform: rotate(90deg);
+    }
+    .dropdown {
+        transform: rotate(270deg);
+    }
+    .text-setting-container .text-settings textarea:hover {
+        outline: none;
+    }
+    footer { 
+        width: 100%; 
+        height: auto;
+        margin: 0; 
+        padding: 5px 0;
+        background: #2D1E2F;
+        color: #FFFFFF;
+        font-family: 'Quicksand semibold', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    footer span {
+        display: block;
+    }
+    footer .end {
+        align-self: flex-end;
+    }
+    #meme-canvas {
+        width: 80%;
+        background-color: gray;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .text-setting-container {
+        display: none;
+    }
+     .first {
+        display: flex;
+    }
+    
+    button {
+        background: white;
+        border: none;
+        outline: none;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #1C5D99;
+        font-family: 'Quicksand semibold', sans-serif;
+        font-size: 15px;
+    }
+    button:hover {
+         border: none;
+         outline: none;
+    }
+    .add-text {
+        margin-left: 15px;
+        height: auto;
+    }
+    .download-btn {
+        margin-top: 10px;
+        height: 50px;
+    }
+    .imgCnt {
+        width: auto;
+        height: auto;
+        margin: 0 4% 0 4%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .imgCnt .imageDialogContainer {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin: 2% 1.5%;
+    }
+    .imgCnt .imageDialogContainer .imageUpload {
+        padding: 20px;
+        background: white;
+        text-align: center;
+        align-self: center;
+        font-family: 'Quicksand bold', sans-serif;
+        color: rgb(39, 6, 6);
+        font-size: 20px;
+        outline: none;
+        display: block;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .imgCnt .imageDialogContainer .imageFile {
+        display: none;
+    }
+    .imgCnt .imageDialogContainer .imageName {
+        display: none;
+        color: #1071F3;
+        margin: 2% 0;
+        font-size: 16px;
+        font-size: inherit;
+        font-family: 'Quicksand medium', sans-serif;
+        font-style: normal;
+    }
+}

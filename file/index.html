@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmo's Meme Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="Assets/favicon/favicon.ico"/>
+    <link rel="icon" type="image/apple-touch-icon" href="Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" href="Assets/favicon/favicon-16x16.png"/>
+    <link rel="icon" href="Assets/favicon/favicon-32x32.png"/>
+</head>
+<body>
+    <nav>
+        <h2 class="logo"><span class="col">em</span>mo</h2>
+        <h2> - MEME GENERATOR - </h2>
+    </nav>
+    <main>
+        <aside class="image-tool">
+            <div class="imgCnt">
+                <div id="preview-container" class="imageDialogContainer">
+                    <div id="imageUpload" title="add image" class="imageUpload">
+                        Add a Template
+                    </div>
+                    <input type="file" class="imageFile" id="image-input" accept="image/*">
+                    <div id="imageName" class="imageName" title="image name"></div>
+                </div>
+        </aside>
+        <div class="content">
+            <p>
+                <button class="generate-btn" title="update template, please double click" id="generate-btn">Generate</button>
+            </p>
+            <p>
+                <center>
+                    <canvas id="meme-canvas"></canvas>
+                </center>
+            </p>
+            <p>
+                <img src="" id="canvas-image" style= "display: none;">
+                <button class="download-btn" title="download memes" id="download-btn">Download meme</button>
+            </p>
+        </div>
+        <aside class="text-tool">
+            <div class="text-setting-container first" id="txt1">
+                <h3>
+                    <span title="text tool">text1</span>
+                    <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB1">
+                </h3>
+                <div class="text-settings" id="set1">
+                    <textarea id="text-one"></textarea>
+                        <hr class="hr">
+                    <div>
+                        <header>Text</header>
+                        <div>
+                            <span>text size:</span>
+                            <input type="range" id="text-one-size-input" min="0.05" 
+                            max="0.25" value="0.15" step="0.001">
+                        </div>
+                        <div>
+                            <span>line height:</span>
+                            <input type="range" id="line-one-height" min="5" 
+                            max="500" value="40" step="0.001">
+                        </div> 
+                    </div>
+                    <hr class="hr">
+                    <div class="text-color">
+                        <header>Colors</header>
+                        <div>
+                            <span>text color:</span>
+                            <input type="color" id="text-one-color">
+                        </div>
+                        <div>
+                            <span>text border color:</span>
+                            <input type="color" id="text-one-border-color">
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="text-position">
+                        <header>Position</header>
+                        <span>X:</span>
+                        <input type="range" id="one-x-position" min="0.05" max="0.95" 
+                        value="0.5" step="0.001"><br>
+                        <span>Y:</span>
+                        <input type="range" id="one-y-position" min="0.05" max="0.95" 
+                        value="0.5" step="0.001">
+                    </div>
+                </div>
+            </div>
+            <div class="text-setting-container" id="txt2">
+                <h3>
+                    <span title="text tool">text2</span>
+                    <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB2">
+                </h3>
+                <div class="text-settings" id="set2">
+                    <textarea id="text-two"></textarea>
+                    <hr class="hr">
+                    <div>
+                        <header>Text</header>                       
+                        <div>
+                            <span>text size:</span>
+                            <input type="range" id="text-two-size-input" min="0.05" 
+                            max="0.25" value="0.15" step="0.001">
+                        </div>
+                        <div>
+                            <span>line height:</span>
+                            <input type="range" id="line-two-height" min="5" 
+                            max="500" value="40" step="0.001">
+                        </div> 
+                    </div>
+                    <hr class="hr">
+                    <div class="text-color">
+                        <header>Colors</header>
+                        <div>
+                            <span>text color:</span>
+                            <input type="color" id="text-two-color">
+                        </div>
+                        <div>
+                            <span>text border color:</span>
+                            <input type="color" id="text-two-border-color">
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="text-position">
+                        <header>Position</header>
+                        <span>X:</span>
+                        <input type="range" id="two-x-position" min="0.05" max="0.95" 
+                        value="0.25" step="0.001"><br>
+                        <span>Y:</span>
+                        <input type="range" id="two-y-position" min="0.05" max="0.95" 
+                        value="0.25" step="0.001">
+                    </div>
+                </div>
+            </div>
+            <div class="text-setting-container" id="txt3">
+                <h3>
+                    <span  title="text tool">text3</span>
+                    <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB3">
+                </h3>
+                <div class="text-settings" id="set3">
+                    <textarea id="text-three"></textarea>
+                    <hr class="hr">
+                    <div>
+                        <header>Text</header> 
+                        <div>
+                            <span>text size:</span>
+                            <input type="range" id="text-three-size-input" min="0.05" 
+                            max="0.25" value="0.15" step="0.001">
+                        </div>
+                        <div>
+                            <span>line height:</span>
+                            <input type="range" id="line-three-height" min="5" 
+                            max="500" value="40" step="0.001">
+                        </div> 
+                    </div>
+                    <hr class="hr">
+                    <div class="text-color">
+                        <header>Colors</header>
+                        <div>
+                            <span>text color:</span>
+                            <input type="color" id="text-three-color">
+                        </div>
+                        <div>
+                            <span>text border color:</span>
+                            <input type="color" id="text-three-border-color">
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="text-position">
+                        <header>Position</header>
+                        <span>X:</span>
+                        <input type="range" id="three-x-position" min="0.05" max="0.95" 
+                        value="0.7" step="0.001"><br>
+                        <span>Y:</span>
+                        <input type="range" id="three-y-position" min="0.05" max="0.95" 
+                        value="0.25" step="0.001">
+                    </div>
+                </div>
+            </div>
+            <div class="text-setting-container" id="txt4">
+                <h3>
+                    <span  title="text tool">text4</span>
+                    <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB4">
+                </h3>
+                <div class="text-settings"  id="set4">
+                    <textarea id="text-four"></textarea>
+                    <hr class="hr">
+                    <div>
+                        <header>Text</header> 
+                        <div>
+                            <span>text size:</span>
+                            <input type="range" id="text-four-size-input" min="0.05" 
+                            max="0.25" value="0.15" step="0.001">
+                        </div>
+                        <div>
+                            <span>line height:</span>
+                            <input type="range" id="line-four-height" min="5" 
+                            max="500" value="40" step="0.001">
+                        </div> 
+                    </div>
+                    <hr class="hr">
+                    <div class="text-color">
+                        <header>Colors</header>
+                        <div>
+                            <span>text color:</span>
+                            <input type="color" id="text-four-color">
+                        </div>
+                        <div>
+                            <span>text border color:</span>
+                            <input type="color" id="text-four-border-color">
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="text-position">
+                        <header>Position</header>
+                        <span>X:</span>
+                        <input type="range" id="four-x-position" min="0.05" max="0.95" 
+                        value="0.25" step="0.001"><br>
+                        <span>Y:</span>
+                        <input type="range" id="four-y-position" min="0.05" max="0.95" 
+                        value="0.7" step="0.001">
+                    </div>
+                </div>
+            </div>
+            <div class="text-setting-container" id="txt5">
+                <h3>
+                    <span title="text tool">text5</span>
+                    <img src="Assets/images/dropdown-logo.svg" class="dropdown" id="dB5">
+                </h3>
+                <div class="text-settings" id="set5">
+                    <textarea id="text-five"></textarea>
+                    <hr class="hr">
+                    <div>
+                        <header>Text</header> 
+                        <div>
+                            <span>text size:</span>
+                            <input type="range" id="text-five-size-input" min="0.05" 
+                            max="0.25" value="0.15" step="0.001">
+                        </div>
+                        <div>
+                            <span>line height:</span>
+                            <input type="range" id="line-five-height" min="5" 
+                            max="500" value="40" step="0.001">
+                        </div> 
+                    </div>
+                    <hr class="hr">
+                    <div class="text-color">
+                        <header>Colors</header>
+                        <div>
+                            <span>text color:</span>
+                            <input type="color" id="text-five-color">
+                        </div>
+                        <div>
+                            <span>text border color:</span>
+                            <input type="color" id="text-five-border-color">
+                        </div>
+                    </div>
+                    <hr class="hr">
+                    <div class="text-position">
+                        <header>Position</header>
+                        <span>X:</span>
+                        <input type="range" id="five-x-position" min="0.05" max="0.95" 
+                        value="0.7" step="0.001"><br>
+                        <span>Y:</span>
+                        <input type="range" id="five-y-position" min="0.05" max="0.95" 
+                        value="0.7" step="0.001">
+                    </div>
+                </div>
+            </div>
+            <button class="add-text"  title="add new text" id="add-text">Add Text</button>
+        </aside>
+    </main>
+    <footer>
+        <h4><span class="end">&copy; OLUBIYI EMMANUEL 2020,</span> <span>#ECX INTERNSHIP</span> <span>#MEME GENERATOR</span></h4>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
